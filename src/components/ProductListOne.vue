@@ -12,11 +12,14 @@
 
 <script>
 
+import { computed } from "vue"
+import { store } from '@/store/store'
+
 export default {
-  props: {
-    products: {
-      type: Object,
-      required: true
+  setup() {
+    const products = computed(()=> store.state.products)
+    return {
+      products
     }
   }
 }

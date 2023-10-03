@@ -12,14 +12,19 @@
 
 <script>
 
-export default {
-  props: {
-    products: {
-      type: Object,
-      required: true
+import { computed, defineComponent} from "vue"
+import { store } from '@/store/store'
+
+export default defineComponent({
+
+  setup() {
+    const products = computed(()=> store.state.products)
+    return {
+      products
     }
   }
-}
+
+})
 
 </script>
 
