@@ -24,5 +24,16 @@ export const store = createStore({
                 price: 3
             }
         ]
+    },
+    getters: {
+        saleProducts: state => {
+            let saleProducts = state.products.map( product => {
+                return {
+                    name: `**${product.name}**`,
+                    price: product.price / 2
+                }
+            })
+            return { saleProducts }
+        }
     }
 })

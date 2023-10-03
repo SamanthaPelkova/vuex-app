@@ -2,7 +2,7 @@
   <div id="product-list-two">
     <h2>Product List Two</h2>
     <ul>
-      <li v-for="product in products" :key="product.id">
+      <li v-for="product in saleProducts" :key="product.id">
         <span class="name">{{ product.name }}</span>
         <span class="price">{{ product.price }} $</span>
       </li>
@@ -19,8 +19,17 @@ export default defineComponent({
 
   setup() {
     const products = computed(()=> store.state.products)
+    const saleProducts = computed(() => {
+      return store.state.products.map(product => {
+        return {
+          name: `**${product.name}**`,
+          price: product.price
+        }
+      })
+    })
     return {
-      products
+      products,
+      saleProducts
     }
   }
 
