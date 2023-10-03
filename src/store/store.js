@@ -41,5 +41,12 @@ export const store = createStore({
                 product.price -= 1
             })
         }
+    },
+    actions: {
+        reducePrice: (context, payload) => {
+            setTimeout(() => {
+                context.commit('reducePrice', payload)
+            }, 2000)
+        }
     }
 })

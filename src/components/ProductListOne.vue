@@ -7,7 +7,7 @@
         <span class="price">{{ product.price }} $</span>
       </li>
     </ul>
-    <button @click="reducePrice">Reduce Price</button>
+    <button @click="reducePrice(4)">Reduce Price</button>
   </div>
 </template>
 
@@ -20,8 +20,8 @@ export default {
   setup() {
     const products = computed(() => store.state.products)
     const saleProducts = computed(() => store.getters.saleProducts)
-    const reducePrice = () => {
-      store.commit('reducePrice')
+    const reducePrice = (amount) => {
+      store.dispatch('reducePrice', amount)
     }
 
 
