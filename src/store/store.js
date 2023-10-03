@@ -11,7 +11,7 @@ export const store = createStore({
             {
                 id: 2,
                 name: 'Apple',
-                price: 1
+                price: 3
             },
             {
                 id: 3,
@@ -30,9 +30,16 @@ export const store = createStore({
                 return state.products.map(product => {
                     return {
                         name: `**${product.name}**`,
-                        price: product.price
+                        price: product.price / 2
                     }
                 })
             }
+    },
+    mutations: {
+        reducePrice: state => {
+            state.products.forEach(product => {
+                product.price -= 1
+            })
+        }
     }
 })

@@ -7,6 +7,7 @@
         <span class="price">{{ product.price }} $</span>
       </li>
     </ul>
+    <button @click="reducePrice">Reduce Price</button>
   </div>
 </template>
 
@@ -19,11 +20,15 @@ export default {
   setup() {
     const products = computed(() => store.state.products)
     const saleProducts = computed(() => store.getters.saleProducts)
+    const reducePrice = () => {
+      store.commit('reducePrice')
+    }
 
 
     return {
       products,
-      saleProducts
+      saleProducts,
+      reducePrice
     }
   }
 }
