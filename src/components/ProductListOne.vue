@@ -18,15 +18,7 @@ import { store } from '@/store/store'
 export default {
   setup() {
     const products = computed(() => store.state.products)
-    const saleProducts = computed(() => {
-      return store.state.products.map(product => {
-        return {
-          name: `**${product.name}**`,
-          price: product.price
-        }
-      })
-    })
-
+    const saleProducts = computed(() => store.getters.saleProducts)
 
 
     return {
