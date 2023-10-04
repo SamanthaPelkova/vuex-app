@@ -13,8 +13,9 @@
 
 <script>
 
-import { computed } from "vue"
+import { computed } from 'vue'
 import { store } from '@/store/store'
+
 
 export default {
   setup() {

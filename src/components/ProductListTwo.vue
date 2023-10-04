@@ -12,7 +12,7 @@
 
 <script>
 
-import { computed, defineComponent} from "vue"
+import { computed, defineComponent} from 'vue'
 import { store } from '@/store/store'
 
 export default defineComponent({
