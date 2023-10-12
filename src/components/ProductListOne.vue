@@ -8,6 +8,7 @@
       </li>
     </ul>
     <button @click="reducePrice(4)">Reduce Price</button>
+    <p>~ the prices will reduce after two seconds</p>
   </div>
 </template>
 
